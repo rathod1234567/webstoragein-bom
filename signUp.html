@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+      let C_name=prompt("enter your name:");
+      let C_password=prompt("enter a valid password:")
+
+      window.localStorage.setItem("name",C_name);
+      window.localStorage.setItem("password",C_password);
+
+      window.location.href="login.html";
+      
+
+    </script>
+</body>
+</html>

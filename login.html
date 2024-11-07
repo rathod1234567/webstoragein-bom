@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #div1{
+        background-image: url("./vk.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        text-align: center;
+        padding: 40px;
+        justify-content: center;
+        margin: auto;
+        border-radius: 15px;
+        box-shadow: 6px 6px 6px yellow;
+    }
+    input{
+        border-radius: 50px;
+        opacity: 0.4;
+        padding: 5px;
+        
+    }
+    button{
+        opacity: 0.7;
+    }
+</style>
+<body style="background-color: aqua;">
+    <div id="div1">
+    <form action="" onsubmit="login(event)">
+    <input type="text" name="" placeholder="UserName" id="name" required><br><br>
+    <input type="password" name="" placeholder="Password"  id="password" required><br><br>
+    <button type="submit">login</button>
+    
+    </form>
+    </div>
+    <script>
+       function login(event){
+        event.preventDefault()
+
+        let inputName=document.getElementById("name");
+        let inputPassword=document.getElementById("password")
+
+        let userName=localStorage.getItem("name");
+        let userPassword=localStorage.getItem("password")
+
+        if(userName === inputName.value  && userPassword === inputPassword.value){
+            alert("login successfully!!!!");
+            localStorage.setItem("isloggedIn","true"); 
+            
+        window.location.href="product.html";
+        }
+        else{
+            alert("oops enter correct email and password")
+            window.location.href="signUp.html"
+        }
+        
+        inputName.value="";
+    
+        inputPassword.value=""
+    
+       }
+    //    window.location.href="product.html";
+    </script>
+</body>
+</html>
